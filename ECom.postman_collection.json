@@ -1,0 +1,537 @@
+{
+	"info": {
+		"_postman_id": "fd5f5fe8-4028-4ac1-9fed-0b6c0db04fbb",
+		"name": "ECom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6ImFuaWwiLCJlbWFpbCI6ImFiY0B0ZXN0LmNvbSJ9LCJpYXQiOjE3MTgwMjM2ODMsImV4cCI6MTcxODAyMzk4M30.p2xeHVVQJlh0NmuAqj68FnDkDneG0l2ooVnqe0S_FIA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Harshit\",\r\n    \"lastName\": \"Sharma\",\r\n    \"email\": \"ihspvt@gmail.com\",\r\n    \"password\":\"8794\",\r\n    \"phoneNumber\": 9113660968\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login_email\": \"ihspvt@gmail.com\",\r\n    \"login_password\":\"8794\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiJIYXJzaGl0IiwibGFzdE5hbWUiOiJTaGFybWEiLCJlbWFpbCI6Imloc3B2dEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRnVjNkT3I1Rk9ha20xNThzNDAuZEx1NkpKU2hvNFc0dlduaVZPLjlWbVdURmtnb3hhNEFPQyIsInBob25lTnVtYmVyIjo5MTEzNjYwOTY4LCJjcmVhdGVkQXQiOiIyMDI0LTA2LTEyVDExOjIxOjIyLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI0LTA2LTEyVDExOjIxOjIyLjAwMFoifSwiaWF0IjoxNzE4MTkxMjg0LCJleHAiOjE3MTgxOTE4ODR9.nx8eXjVGgdc3C2wqyPkXjToBifY8INOAEgHs_TVF7C8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE4MTg5MTU1LCJleHAiOjE3MTgxODk3NTV9.oND0F8RXGtLsBOV67eyV9W50GiPhMqWfuFWNqD2aXT8",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"categoryId\": 1,\r\n  \"name\": \"Tshirt Gucci\",\r\n  \"description\": \"it is a gucci tshirt\",\r\n  \"price\": 1000,\r\n  \"stock\": 50,\r\n  \"imageUrl\": \"gucciTshirt.jpg\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:3000/profile/products/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile",
+						"products",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "see products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/profile/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "see one product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/profile/products/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile",
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Tshirt Gucci 1\",\r\n  \"description\": \"it is a gucci tshirt\",\r\n  \"price\": 1000,\r\n  \"stock\": 50,\r\n  \"imageUrl\": \"gucciTshirt1.jpg\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/profile/products/edit/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile",
+						"products",
+						"edit",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/profile/products/delete/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile",
+						"products",
+						"delete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/profile/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add product to cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiJIYXJzaGl0IiwibGFzdE5hbWUiOiJTaGFybWEiLCJlbWFpbCI6Imloc3B2dEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRVNk53MUdXekFvTHNaL3pYdGZlTnIuUjBwNDFQaE80OTRza1psd2VXRFh4MjNocW81Yk91MiIsInBob25lTnVtYmVyIjo5MTEzNjYwOTY4LCJjcmVhdGVkQXQiOiIyMDI0LTA2LTEzVDA2OjA0OjI0LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI0LTA2LTEzVDA2OjA0OjI0LjAwMFoifSwiaWF0IjoxNzE4MjU4NjY2LCJleHAiOjE3MTgyNTkyNjZ9.NbXn-gizCsFAgKAyEoekxQkb0PFPBDrk_XJcWQv17tw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/profile/cart/add/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile",
+						"cart",
+						"add",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/profile/cart/remove/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile",
+						"cart",
+						"remove",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "checkout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiJIYXJzaGl0IiwibGFzdE5hbWUiOiJTaGFybWEiLCJlbWFpbCI6Imloc3B2dEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYSQxMCRSZjRJWVVmSUhRU3c1U3RieGlJSnNlRjRSY09IRWg3NmU4MU5NOHU5S1NYdXNVY3lBRW5SdSIsInBob25lTnVtYmVyIjo5MTEzNjYwOTY4LCJjcmVhdGVkQXQiOiIyMDI0LTA2LTEzVDA2OjUzOjI5LjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDI0LTA2LTEzVDA2OjUzOjI5LjAwMFoifSwiaWF0IjoxNzE4MjYxNjEwLCJleHAiOjE3MTgyNjIyMTB9._SVGkzpJ68DR_V2mlofPBp-LJDMlXMeMwc65JCCA1MI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/profile/cart/checkout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"profile",
+						"cart",
+						"checkout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders (admin)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get order details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/orders/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirm order (admin)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/orders/confirm/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"confirm",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ship order (admin)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/orders/ship/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"ship",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deliver order (admin)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/orders/deliver/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"deliver",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/orders/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"orderId\": 123,\r\n  \"paymentMethod\": \"credit_card\",\r\n  \"cardDetails\": {\r\n    \"cardNumber\": \"**** **** **** 1234\",\r\n    \"expiryDate\": \"12/23\",\r\n    \"cvv\": \"***\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payment rollback",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"transactionId\": \"txn_1234567890\",\r\n  \"paymentStatus\": \"paid\",\r\n  \"amount\": 8000,\r\n  \"currency\": \"USD\",\r\n  \"customerEmail\": \"customer@example.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/payment/status/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"payment",
+						"status",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin dashboard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/admin/dashoard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"admin",
+						"dashoard"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
